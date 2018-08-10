@@ -1,0 +1,25 @@
+{% extends index.html %}
+
+{% block title %}
+发现页
+{% end block %}
+
+{% block head %}
+        img{
+            width: 200px;
+            height: 200px;
+        }
+{% end block %}
+
+{% block content %}
+<span>this is explore page!!!</span>
+<div>
+{% for num in range(9) %}
+        {% if num == 0 %}
+        <img src="{{ static_url('timg.jpg') }}"></img>
+        {% else %}
+        <img src="{{ static_url('timg{}.jpg'.format(num)) }}"></img>
+        {% end %}
+    {% end for%}
+{% end block %}
+</div>

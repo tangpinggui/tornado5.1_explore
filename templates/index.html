@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+    {% block title %}
+        首页
+    {% end block %}
+    </title>
+    <style>
+        {% block head %}
+        img{
+            width: 400px;
+            height: 400px;
+        }
+        {% end blok %}
+    </style>
+</head>
+<body>
+{% block content %}
+<span>this is index！！！</span>
+<div>
+{% for num in range(9) %}
+    {% if num == 0 %}
+    <a href="/post/{{ num }}">
+        <img src="{{ static_url('timg.jpg') }}"></img>
+    </a>
+    {% else %}
+    <a href="/post/{{ num }}">
+        <img src="{{ static_url('timg{}.jpg'.format(num)) }}"></img>
+    </a>
+    {% end %}
+{% end for %}
+</div>
+{% end block %}
+</body>
+</html>
