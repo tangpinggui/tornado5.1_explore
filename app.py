@@ -7,7 +7,7 @@ from handlers.main import main_handler
 
 
 define('port', default=8000, type=int, help='Listening port')
-
+##
 
 class AppConfig(tornado.web.Application):
     """ 继承了Application重写init，再将重写的参数通过super传给Application """
