@@ -9,10 +9,6 @@
     </title>
     <style>
         {% block head %}
-        img{
-            width: 400px;
-            height: 400px;
-        }
         {% end blok %}
     </style>
 </head>
@@ -20,17 +16,9 @@
 {% block content %}
 <span>this is index！！！</span>
 <div>
-{% for num in range(9) %}
-    {% if num == 0 %}
-    <a href="/post/{{ num }}">
-        <img src="{{ static_url('timg.jpg') }}"></img>
-    </a>
-    {% else %}
-    <a href="/post/{{ num }}">
-        <img src="{{ static_url('timg{}.jpg'.format(num)) }}"></img>
-    </a>
-    {% end %}
-{% end for %}
+{% for url in urls %}
+    <a href="/explore"><img src="{{ static_url(url) }}" alt=""></a>
+{% end %}
 </div>
 {% end block %}
 </body>

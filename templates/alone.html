@@ -14,12 +14,6 @@
 {% block content %}
 <span>this is alone page!!!</span>
 <div>
-{% if id %}
-        {% if int(id) == 0 %}
-        <img src="{{ static_url('timg.jpg') }}"></img>
-        {% else %}
-        <img src="{{ static_url('timg{}.jpg'.format(id)) }}"></img>
-        {% end %}
-    {% end for%}
-{% end block %}
+    <img src="{{ static_url(url)}}"></img>
 </div>
+{% end block %}

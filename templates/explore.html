@@ -14,12 +14,8 @@
 {% block content %}
 <span>this is explore page!!!</span>
 <div>
-{% for num in range(9) %}
-        {% if num == 0 %}
-        <img src="{{ static_url('timg.jpg') }}"></img>
-        {% else %}
-        <img src="{{ static_url('timg{}.jpg'.format(num)) }}"></img>
-        {% end %}
-    {% end for%}
-{% end block %}
+    {% for url in img_urls %}
+    <a href="/post/{{ img_urls.index(url) }}"><img src="{{ static_url(url) }}" alt=""></a>
+    {% end %}
 </div>
+{% end block %}

@@ -16,6 +16,7 @@ class AppConfig(tornado.web.Application):
             (r'/', main_handler.MainHandler),
             (r'/post/(?P<id>[0-9]{1,})', main_handler.ALoneHandler),
             (r'/explore', main_handler.ExploreHandler),
+            (r'/upload', main_handler.UploadHandler),
         ]
         settings = dict(
             debug=True,
