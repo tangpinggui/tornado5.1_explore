@@ -1,0 +1,28 @@
+{% extends index.html %}
+
+{% block title %}
+上传文件
+{% end block %}
+
+{% block head %}
+{% end block %}
+
+{% block body %}
+<div class="row">
+    <div class="col-md12">
+        <div class="box box-primary">
+            <form action="" method="post" role="form" enctype="multipart/form-data">
+                <div class="box-body">
+                    <div class="form-group">
+                        <label for="exampleInputFile">File input</label>
+                        <input type="file" id="exampleInputFile" name="files">
+                    </div>
+                </div>
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-primary">提交</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% end block %}

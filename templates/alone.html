@@ -5,13 +5,16 @@
 {% end block %}
 
 {% block head %}
-        img{
-            width: 400px;
-            height: 400px;
-        }
 {% end block %}
 
-{% block content %}
+{% block style %}
+    img{
+        width: 400px;
+        height: 400px;
+    }
+{% end block %}
+
+{% block body %}
 <span>this is alone page!!!</span>
 <div>
     <img src="{{ static_url(url)}}"></img>

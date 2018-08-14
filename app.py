@@ -20,6 +20,7 @@ class AppConfig(tornado.web.Application):
             (r'/upload', main_handler.UploadHandler),
             (r'/login', auth_handler.LoginHandler),
             (r'/logout', auth_handler.LogoutHandler),
+            (r'/register', auth_handler.RegisterHandler),
         ]
         settings = dict(
             debug=True,

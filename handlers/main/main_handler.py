@@ -3,9 +3,13 @@ import uuid
 from pycket.session import SessionMixin
 
 from libs.main import main_libs
+from models.db.db_config import dbSession
 
 
 class AuthBaseHandler(tornado.web.RequestHandler, SessionMixin):
+    def initialize(self):
+        self.db = dbSession
+
     def get_current_user(self):
         return self.session.get('cookie_name')
 
@@ -23,10 +27,10 @@ class ExploreHandler(AuthBaseHandler):
     def get(self):
         path = 'uploads'
         img_urls = main_libs.get_all_images(path)
-        self.render('explore.html', img_urls=img_urls)
+        self.render('explore.html', urls=img_urls)
 
 
-class ALoneHandler(tornado.web.RequestHandler):
+class ALoneHandler(AuthBaseHandler):
     """ 单独页 """
     @tornado.web.authenticated
     def get(self, id):
@@ -54,4 +58,4 @@ class UploadHandler(AuthBaseHandler):
                     thumbnail_result = main_libs.change_to_thumbnail(img_save_path, abs_thumbnail_father_path)
                     return self.redirect('/explore')
         else:
-            self.write('no any files')
+            self.write('no choice any files')

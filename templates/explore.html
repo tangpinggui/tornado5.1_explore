@@ -5,17 +5,20 @@
 {% end block %}
 
 {% block head %}
-        img{
-            width: 200px;
-            height: 200px;
-        }
 {% end block %}
 
-{% block content %}
+{% block style %}
+    img{
+        width: 200px;
+        height: 200px;
+    }
+{% end block %}
+
+{% block body %}
 <span>this is explore page!!!</span>
 <div>
-    {% for url in img_urls %}
-    <a href="/post/{{ img_urls.index(url) }}"><img src="{{ static_url(url) }}" alt=""></a>
+    {% for url in urls %}
+    <a href="/post/{{ urls.index(url) }}"><img src="{{ static_url(url) }}" alt=""></a>
     {% end %}
 </div>
 {% end block %}

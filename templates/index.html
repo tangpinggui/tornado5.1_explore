@@ -7,13 +7,29 @@
         首页
     {% end block %}
     </title>
+    <link rel="stylesheet" href="/static/adminlte/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/adminlte/bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/adminlte/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="/static/adminlte/dist/css/skins/_all-skins.min.css">
+    <script src="/static/adminlte/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/static/adminlte/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/static/adminlte/dist/js/adminlte.min.js"></script>
+    <script src="/static/adminlte/plugins/iCheck/icheck.min.js"></script>
+    {% block head %}
+    {% end blok %}
     <style>
-        {% block head %}
-        {% end blok %}
+        {% block style %}
+        {% end block %}
     </style>
 </head>
 <body>
-{% block content %}
+{% if current_user %}
+<span>当前用户：{{ current_user }}－－</span>
+{% else %}
+<span><a href="/login">未登录</a></span>
+{% end %}
+
+{% block body %}
 <span>this is index！！！</span>
 <div>
 {% for url in urls %}
