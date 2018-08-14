@@ -1,36 +1,42 @@
-import tornado.ioloop
 import tornado.web
 import uuid
-import os
+from pycket.session import SessionMixin
 
-from libs import main_libs
+from libs.main import main_libs
 
 
-class MainHandler(tornado.web.RequestHandler):
+class AuthBaseHandler(tornado.web.RequestHandler, SessionMixin):
+    def get_current_user(self):
+        return self.session.get('cookie_name')
+
+
+class MainHandler(AuthBaseHandler):
     """ 首页 """
     def get(self):
         urls = main_libs.get_all_images('thumbs')
         self.render('index.html', urls=urls)
 
 
-class ExploreHandler(tornado.web.RequestHandler):
+class ExploreHandler(AuthBaseHandler):
     """ 发现页 """
+    @tornado.web.authenticated
     def get(self):
         path = 'uploads'
         img_urls = main_libs.get_all_images(path)
-        length = len(img_urls)
-        self.render('explore.html', img_urls=img_urls, length=length)
+        self.render('explore.html', img_urls=img_urls)
 
 
 class ALoneHandler(tornado.web.RequestHandler):
     """ 单独页 """
+    @tornado.web.authenticated
     def get(self, id):
         urls = main_libs.get_all_images('uploads')
         self.render('alone.html', url=urls[int(id)])
 
 
-class UploadHandler(tornado.web.RequestHandler):
+class UploadHandler(AuthBaseHandler):
     """ 接收图片并储存,再储存一张缩略图 """
+    @tornado.web.authenticated
     def get(self, *args, **kwargs):
         self.render('upload.html')
 
