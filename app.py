@@ -21,6 +21,7 @@ class AppConfig(tornado.web.Application):
             (r'/login', auth_handler.LoginHandler),
             (r'/logout', auth_handler.LogoutHandler),
             (r'/register', auth_handler.RegisterHandler),
+            (r'/profile', auth_handler.ProfileHandler),
         ]
         settings = dict(
             debug=True,

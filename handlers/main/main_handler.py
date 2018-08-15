@@ -4,6 +4,7 @@ from pycket.session import SessionMixin
 
 from libs.main import main_libs
 from models.db.db_config import dbSession
+from models.auth.model import Posts, User
 
 
 class AuthBaseHandler(tornado.web.RequestHandler, SessionMixin):
@@ -16,26 +17,26 @@ class AuthBaseHandler(tornado.web.RequestHandler, SessionMixin):
 
 class MainHandler(AuthBaseHandler):
     """ 首页 """
+    @tornado.web.authenticated
     def get(self):
-        urls = main_libs.get_all_images('thumbs')
-        self.render('index.html', urls=urls)
+        user_posts = User.get_current_user_post(self.current_user)
+        self.render('index.html', posts=user_posts)
 
 
 class ExploreHandler(AuthBaseHandler):
     """ 发现页 """
     @tornado.web.authenticated
     def get(self):
-        path = 'uploads'
-        img_urls = main_libs.get_all_images(path)
-        self.render('explore.html', urls=img_urls)
+        posts = Posts.get_all()
+        self.render('explore.html', posts=posts)
 
 
 class ALoneHandler(AuthBaseHandler):
     """ 单独页 """
     @tornado.web.authenticated
     def get(self, id):
-        urls = main_libs.get_all_images('uploads')
-        self.render('alone.html', url=urls[int(id)])
+        post = Posts.by_id(id)
+        self.render('alone.html', post=post)
 
 
 class UploadHandler(AuthBaseHandler):
@@ -46,16 +47,15 @@ class UploadHandler(AuthBaseHandler):
 
     def post(self, *args, **kwargs):
         files = self.request.files.get('files')  # [{'filename': x, 'body': x..., 'content_type': 'image/jpeg'},]
-        abs_img_father_path = 'static/uploads/'
-        abs_thumbnail_father_path = 'static/thumbs/'
         if files:
             for file in files:
-                uu = str(uuid.uuid1())
-                img_save_name = uu + '_' + file['filename']
-                img_save_path = abs_img_father_path + img_save_name
-                result = main_libs.save_files_lib(img_save_path, file['body'])
-                if result:
-                    thumbnail_result = main_libs.change_to_thumbnail(img_save_path, abs_thumbnail_father_path)
-                    return self.redirect('/explore')
+                picture = main_libs.MainFileLib('static', file['filename'])
+                picture.save_file(file['body'])
+                picture.save_thumbs_file(file['body'])
+                if self.current_user:
+                    picture.upload_file_and_thumbs_file(self.current_user)
+                else:
+                    self.write('登录失效')
+            return self.redirect('/explore')
         else:
             self.write('no choice any files')

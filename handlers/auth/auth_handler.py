@@ -3,6 +3,7 @@ from handlers.main.main_handler import AuthBaseHandler
 from sqlalchemy.sql import exists
 
 from libs.auth import auth_lib
+from models.auth.model import Posts
 
 
 class RegisterHandler(AuthBaseHandler):
@@ -14,8 +15,9 @@ class RegisterHandler(AuthBaseHandler):
         password1 = self.get_argument('password1', '')
         password2 = self.get_argument('password2', '')
         result = auth_lib.register_user_data(self, username, password1, password2)
+        if result['status']:
+            return self.redirect('/login')
         return self.write(result['message'])
-
 
 class LoginHandler(AuthBaseHandler):
     def get(self):
@@ -39,4 +41,12 @@ class LoginHandler(AuthBaseHandler):
 class LogoutHandler(AuthBaseHandler):
     def get(self):
         self.session.delete('cookie_name')
-        self.write('logout success')
+        self.redirect('/login')
+
+
+class ProfileHandler(AuthBaseHandler):
+    def get(self):
+        username = self.get_argument('username', '')
+        posts = Posts.self_uploads_img(username)
+        print(posts)
+        self.render('profile.html', posts=posts)

@@ -17,8 +17,8 @@
 {% block body %}
 <span>this is explore page!!!</span>
 <div>
-    {% for url in urls %}
-    <a href="/post/{{ urls.index(url) }}"><img src="{{ static_url(url) }}" alt=""></a>
+    {% for post in posts %}
+    <a href="/post/{{ post.id }}"><img src="{{ static_url(post.thumbs_url) }}" alt=""></a>
     {% end %}
 </div>
 {% end block %}
