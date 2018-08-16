@@ -77,5 +77,9 @@ class Like(Base):
         return dbSession.query(cls).filter(Posts.id == id)
 
     @classmethod
-    def get_user_like(cls, user_id):
-        return dbSession.query(cls).filter(Like.like_num == 1,Like.user_id==user_id).all()
+    def red(cls, user_id, post_id):
+        return dbSession.query(cls).filter(Like.like_num == 1,Like.user_id==user_id,Like.post_id==post_id).all()
+
+    @classmethod
+    def get_file_like_num(cls, post_id):
+        return len(dbSession.query(cls).filter(Like.like_num == 1,Like.post_id == post_id).all())

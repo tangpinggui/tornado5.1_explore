@@ -1,6 +1,6 @@
 from models.db.db_config import dbSession
 
-from models.auth.model import User
+from models.auth.model import User, Posts, Like
 
 
 def register_user_data(self, username, password1, password2):
@@ -38,3 +38,34 @@ def login_auth(self, username, password):
         return {'status': True, 'message': '登录成功'}
 
 
+def add_or_del_like(status, file_id, username):
+    if not username:
+        return {'code': 400, 'message': 'weidenglu'}
+    user = User.by_name(name=username)
+    user_id = user.id
+
+    post = Posts.by_id(id=file_id)
+    likes = post.like
+    if likes:
+        for like in likes:
+            if like.user_id == user_id:
+                if status:
+                    like.like_num = 1
+                else:
+                    like.like_num = 0
+            else:
+                if status:
+                    like = Like(
+                        like_num=1,
+                        post_id=file_id,
+                        user_id=user_id
+                    )
+    else:
+        like = Like(
+            like_num=1,
+            post_id=file_id,
+            user_id=user_id
+        )
+    dbSession.add(like)
+    dbSession.commit()
+    return {'code': 200, 'message': '处理成功'}

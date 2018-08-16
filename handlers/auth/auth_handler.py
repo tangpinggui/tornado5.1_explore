@@ -52,9 +52,12 @@ class ProfileHandler(AuthBaseHandler):
         posts = Posts.self_uploads_img(username)
         user = User.by_name(name=username)
 
-        red = Like.get_user_like(user.id)
-
-        self.render('profile.html', posts=posts, red=red)
+        lists = []
+        for post in posts:
+            num = Like.get_file_like_num(post.id)
+            red = Like.red(user.id, post.id)
+            lists.append({'post': post, 'num': num, 'red':red})  # file obj, dianzan num, 是否已点赞
+        self.render('profile.html', lists=lists)
 
 
 class ProfileLikeHandler(AuthBaseHandler):
