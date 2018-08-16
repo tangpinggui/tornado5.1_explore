@@ -1,9 +1,10 @@
+import json
 import tornado.web
 from handlers.main.main_handler import AuthBaseHandler
 from sqlalchemy.sql import exists
 
 from libs.auth import auth_lib
-from models.auth.model import Posts
+from models.auth.model import Posts, Like, User
 
 
 class RegisterHandler(AuthBaseHandler):
@@ -45,8 +46,21 @@ class LogoutHandler(AuthBaseHandler):
 
 
 class ProfileHandler(AuthBaseHandler):
+    @tornado.web.authenticated
     def get(self):
         username = self.get_argument('username', '')
         posts = Posts.self_uploads_img(username)
-        print(posts)
-        self.render('profile.html', posts=posts)
+        user = User.by_name(name=username)
+
+        red = Like.get_user_like(user.id)
+
+        self.render('profile.html', posts=posts, red=red)
+
+
+class ProfileLikeHandler(AuthBaseHandler):
+    @tornado.web.authenticated
+    def post(self):
+        status = int(self.get_argument('status'))  # 0取消点赞: or 1点赞
+        file_id = int(self.get_argument('file_id'))
+        result = auth_lib.add_or_del_like(status, file_id, self.current_user)
+        self.write(json.dumps(result))

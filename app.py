@@ -22,6 +22,7 @@ class AppConfig(tornado.web.Application):
             (r'/logout', auth_handler.LogoutHandler),
             (r'/register', auth_handler.RegisterHandler),
             (r'/profile', auth_handler.ProfileHandler),
+            (r'/profile/like', auth_handler.ProfileLikeHandler),  # 点赞计数接口
         ]
         settings = dict(
             debug=True,

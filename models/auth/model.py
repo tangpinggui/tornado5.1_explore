@@ -60,3 +60,22 @@ class Posts(Base):
         return dbSession.query(cls).filter(
             Posts.user_id == user_id
         ).all()
+
+
+class Like(Base):
+    __tablename__ = 'like'
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    like_num = Column(Integer, default=0)
+    user_id = Column(Integer, ForeignKey(User.id))
+    post_id = Column(Integer, ForeignKey(Posts.id))
+
+    user = relationship('User', backref='like', cascade='all')
+    post = relationship('Posts', backref='like', cascade='all')
+
+    @classmethod
+    def by_id_filter(cls, id):
+        return dbSession.query(cls).filter(Posts.id == id)
+
+    @classmethod
+    def get_user_like(cls, user_id):
+        return dbSession.query(cls).filter(Like.like_num == 1,Like.user_id==user_id).all()

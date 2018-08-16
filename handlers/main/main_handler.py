@@ -19,8 +19,11 @@ class MainHandler(AuthBaseHandler):
     """ 首页 """
     @tornado.web.authenticated
     def get(self):
-        user_posts = User.get_current_user_post(self.current_user)
-        self.render('index.html', posts=user_posts)
+        if self.current_user:
+            user_posts = User.get_current_user_post(self.current_user)
+            self.render('index.html', posts=user_posts)
+        else:
+            self.redirect('/login')
 
 
 class ExploreHandler(AuthBaseHandler):
@@ -55,7 +58,6 @@ class UploadHandler(AuthBaseHandler):
                 if self.current_user:
                     picture.upload_file_and_thumbs_file(self.current_user)
                 else:
-                    self.write('登录失效')
-            return self.redirect('/explore')
+                    return self.redirect('/upload')
         else:
             self.write('no choice any files')
