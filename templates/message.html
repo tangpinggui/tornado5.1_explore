@@ -1,0 +1,71 @@
+{% extends index.html %}
+
+{% block body %}
+<div id="message"></div>
+<form action="">
+    <input type="text">
+    <input id="sub-msg" type="submit" value="提交">
+</form>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var ws = new WebSocket("ws://"+ location.host + "/ws");
+ws.onopen = function() {
+   ws.send("Hello, world");
+};
+ws.onmessage = function (evt) {
+   alert(evt.data);
+};
+    })
+
+    // $(document).ready(function () {
+    //     if(!window.console) window.console = {};
+    //     if(!window.console.log) window.console.log = function () {};
+    //     $('#sub-msg').on('submit', function () {
+    //             newMessage($(this));
+    //             return false
+    //         });
+    //     $('#sub-msg').on('keypress', function (e) {
+    //         if (e.keyCode == 13){
+    //             newMessage($(this));
+    //             return false
+    //         }
+    //     });
+    //     $('#message').select();
+    //     updater.start();
+    // });
+    //
+    // function newMessage(form) {
+    //     var message = form.formToDict();
+    //     updater.socket.send(JSON.stringify(message));
+    //     form.find("input[type=text]").val("").select();
+    // }
+    //
+    // jQuery.fn.formToDict = function () {
+    //     var fileds = this.serializeArray();
+    //     var json = {};
+    //     for (var i=0;i<fileds.length;i++){
+    //         json[fileds[i].name] = fileds[i].value;
+    //     }
+    //     if (json.next) delete json.next;
+    //     return json
+    // };
+    //
+    // var updater = {
+    //     socket: null,
+    //     start: function () {
+    //         var url="ws://" + location.host +"/ws";
+    //         updater.socket = new WebSocket(url);
+    //         updater.socket.onmessage = function (event) {
+    //             updater.showMessage(JSON.parse(event.data));
+    //         }
+    //     },
+    //     showMessage: function (message) {
+    //         var existing = $("#" + message.id);
+    //         if (existing.length>0)return;
+    //         var node = $(message.html);
+    //         $("#message").append(node)
+    //     }
+    // }
+
+</script>
+{% end %}

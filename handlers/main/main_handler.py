@@ -8,11 +8,12 @@ from models.auth.model import Posts, User
 
 
 class AuthBaseHandler(tornado.web.RequestHandler, SessionMixin):
+    ''' 拥有数据库session的base类 '''
     def initialize(self):
         self.db = dbSession
 
     def get_current_user(self):
-        return self.session.get('cookie_name')
+        return self.session.get('cookie_name')  # 也可以查询user对象返回，感觉会更好
 
 
 class MainHandler(AuthBaseHandler):
