@@ -57,7 +57,8 @@ class UploadHandler(AuthBaseHandler):
                 picture.save_thumbs_file(file['body'])
                 if self.current_user:
                     picture.upload_file_and_thumbs_file(self.current_user)
-                else:
                     return self.redirect('/upload')
+                else:
+                    return self.write('to db error')
         else:
             self.write('no choice any files')

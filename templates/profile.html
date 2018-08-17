@@ -14,8 +14,14 @@
         <ul class="nav nav-tabs">
             <li class="active"><a href="#activity" data-toggle="tab" aria-expanded="true">📝历史记录</a></li>
             <li class=""><a href="#timeline" data-toggle="tab" aria-expanded="false"><i style="color: red"
-                                                                                        class="fa fa-heart"></i>喜欢的图片</a>
+                                                                                        class="fa fa-heart"></i>我的宝库</a>
             </li>
+            <a href="/profile?username={{ current_user }}"
+               style="background: rgba(48,49,39,0.17); border: none;margin-top: 0px;margin-left: 40%;width: auto"
+               class="btn btn-primary pull-right">
+                <i class="fa fa-refresh"></i>
+                flush
+            </a>
         </ul>
         <div class="tab-content">
             <!--start 历史记录-->
@@ -28,21 +34,23 @@
                     </p>
                     {% if lists %}
                     {% for li in lists %}
-                    <P><img style="width: 100px;height: 100px; margin-top: 10px" src="{{ static_url(li['post'].thumbs_url) }}"
+                    <P><img style="width: 100px;height: 100px; margin-top: 10px"
+                            src="{{ static_url(li['post'].thumbs_url) }}"
                             alt=""></P>
                     <ul class="list-inline">
                         <li><a href="javascript:void(0);" class="link-black text-sm"><i
                                 class="fa fa-share margin-r-5"></i> Share</a></li>
                         <li>
                             <a href="javascript:void(0);" class="link-black text-sm dianzan">
-                                {% if li['red'] %}
-                                <i style="color: red" class="fa fa-thumbs-o-up margin-r-5" file-id="{{ li['post'].id }}">
-                                {% else %}
+                                {% if li['red'] %}<span id="saved">已收藏</span>
+                                <i style="color: red" class="fa fa-thumbs-o-up margin-r-5"
+                                   file-id="{{ li['post'].id }}">
+                                {% else %}<span id="saved">加入宝库</span>
                                 <i class="fa fa-thumbs-o-up margin-r-5" file-id="{{ li['post'].id }}">
                                 {% end %}
-                                {{ li['num'] }}
+                                    {{ li['num'] }}
                                 </i>
-                                Like
+                                    Like
                             </a>
                         </li>
                         <li class="pull-right">
@@ -69,22 +77,28 @@
                     </p>
                     {% if lists %}
                     {% for li in lists %}
-                    {% if lists.index(li) > 3 %}
-                    <P><img style="width: 100px;height: 100px; margin-top: 10px" src="{{ static_url(li['post'].thumbs_url) }}"
+                    {% if li['red'] %}
+                    <div id="appear">
+                    <P><img style="width: 100px;height: 100px; margin-top: 10px"
+                            src="{{ static_url(li['post'].thumbs_url) }}"
                             alt=""></P>
                     <ul class="list-inline">
                         <li><a href="#" class="link-black text-sm"><i class="fa fa-share margin-r-5"></i> Share</a></li>
-                        <li><a href="#" class="link-black text-sm"><i class="fa fa-thumbs-o-up margin-r-5"></i> Like</a>
+                        <li><a href="javascript:void(0);" class="link-black text-sm dianzan">
+                            <span>移除宝库</span>
+                            <i file-id="{{ li['post'].id }}" style="color: red;" class="only-red fa fa-thumbs-o-up margin-r-5">
+                                {{ li['num'] }}
+                            </i>
+                            Like</a>
                         </li>
                         <li class="pull-right">
                             <a href="#" class="link-black text-sm"><i class="fa fa-comments-o margin-r-5"></i> Comments
                                 (5)</a></li>
-                    </ul>
                     <input class="form-control input-sm" type="text" placeholder="Type a comment">
+                    </ul>
+                    </div>
                     {% end %}
                     {% end %}
-                    <button style="margin-top: 20px;margin-left: 40%;width: 200px" class="btn btn-primary">load more
-                    </button>
                     {% else %}
                     no like
                     {% end %}
