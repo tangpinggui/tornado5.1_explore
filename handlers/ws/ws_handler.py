@@ -1,6 +1,7 @@
 import logging
 import redis
 import tornado.escape
+import tornado.web
 from datetime import datetime
 from tornado.websocket import WebSocketHandler
 from pycket.session import SessionMixin
@@ -16,7 +17,7 @@ class WsBaseHandler(WebSocketHandler, SessionMixin):
 
     def initialize(self):
         self.db = dbSession  # mysql
-        self.rds = rds  # redis
+        self.conn = rds  # redis
 
     def get_current_user(self):
         username = self.session.get('cookie_name')
@@ -27,31 +28,47 @@ class WsBaseHandler(WebSocketHandler, SessionMixin):
 
 
 class SendMessageHandler(WsBaseHandler):
+    @tornado.web.authenticated
     def get(self):
-        cache = self.rds.lrange('message:list', -5, -1)
+        cache = self.conn.lrange('message:list', -5, -1)
         cache.reverse()
-        self.render('message.html', messages='hellow word')
+        cache_list = []
+        for ca in cache:
+            message_dict = tornado.escape.json_decode(ca)
+            cache_list.append(message_dict)
+        kw = {
+            'cache': cache_list
+        }
+        self.render('message.html', **kw)
+
+
 
 
 class WebSocketHandler(WsBaseHandler):
-    message_users = {}
+    users = {}
+
+    def get_compression_options(self):
+        """ 非None的返回值，开启压缩 """
+        return {}
 
     def open(self):
+        print('-------'*10,'open')
         logging.info('start a connection with %s' % self)
-        self.message_users[self.current_user.name] = self
+        self.users[self.current_user.name] = self
 
     def on_message(self, message):
-        print(message)
+        print('-----'*10,message)
         msg = tornado.escape.json_decode(message)
-        message.update({
+        msg.update({
             'name': self.current_user.name,
             'datetime': datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         })
         message = tornado.escape.json_encode(msg)
-        self.rds.rpush('message:list', message)
-        for k, v in message.items():
+        self.conn.rpush('message:list', message)
+        for _, v in WebSocketHandler.users.items():
             v.write_message(message)
 
     def on_close(self):
+        print('-------'*10,'close')
         logging.info("end connection")
-        self.message_users.pop(self.current_user.name)
+        self.users.pop(self.current_user.name)

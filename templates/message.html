@@ -1,23 +1,35 @@
 {% extends index.html %}
 
 {% block body %}
-<div id="message"></div>
-<form action="">
-    <input type="text">
-    <input id="sub-msg" type="submit" value="提交">
+<div id="msg-box">
+    {% if cache %}
+        {{ cache }}
+    {% end %}
+</div>
+<form action="" method="get">
+    <input type="text" id="send-msg">
+    <input id="sub-msg" type="submit">
 </form>
 <script type="text/javascript">
     $(document).ready(function () {
         var ws = new WebSocket("ws://"+ location.host + "/ws");
-ws.onopen = function() {
-   ws.send("Hello, world");
-};
-ws.onmessage = function (evt) {
-   alert(evt.data);
-};
+        var msg_box = $('#msg-box');
+        ws.onmessage = function (evt) {  // 接收消息
+            // msg_box.append(evt.data);
+            alert(evt.data);
+        };
+        $(function () {  // 发送消息
+            var sub = $('#sub-msg');
+            sub.click(function () {
+                var msg = $('#send-msg').html();
+                alert(msg)
+                ws.send(msg)
+            })
+        })
     })
 
-    // $(document).ready(function () {
+
+    // $(document).ready(function (event) {
     //     if(!window.console) window.console = {};
     //     if(!window.console.log) window.console.log = function () {};
     //     $('#sub-msg').on('submit', function () {
@@ -36,6 +48,7 @@ ws.onmessage = function (evt) {
     //
     // function newMessage(form) {
     //     var message = form.formToDict();
+    //     alert(message)
     //     updater.socket.send(JSON.stringify(message));
     //     form.find("input[type=text]").val("").select();
     // }
@@ -55,9 +68,9 @@ ws.onmessage = function (evt) {
     //     start: function () {
     //         var url="ws://" + location.host +"/ws";
     //         updater.socket = new WebSocket(url);
-    //         updater.socket.onmessage = function (event) {
-    //             updater.showMessage(JSON.parse(event.data));
-    //         }
+    //         // updater.socket.onmessage = function (event) {
+    //         //     updater.showMessage(JSON.parse(event.data));
+    //         // }
     //     },
     //     showMessage: function (message) {
     //         var existing = $("#" + message.id);

@@ -6,6 +6,7 @@ from tornado.options import define, options
 from handlers.main import main_handler
 from handlers.auth import auth_handler
 from handlers.ws import ws_handler
+from handlers.message import message_handler
 
 
 define('port', default=8000, type=int, help='Listening port')
@@ -24,7 +25,12 @@ class AppConfig(tornado.web.Application):
             (r'/register', auth_handler.RegisterHandler),
             (r'/profile', auth_handler.ProfileHandler),
             (r'/profile/like', auth_handler.ProfileLikeHandler),  # 点赞计数接口
-            (r'/ws', ws_handler.SendMessageHandler),  # 聊天室
+            (r'/ws', ws_handler.WebSocketHandler),  # 聊天室
+            (r'/message', ws_handler.SendMessageHandler),  # 聊天室
+            # -------
+            (r"/message/message", message_handler.MessageHandler),
+            (r"/message/message_websocket", message_handler.WebSocketHandler),
+            (r"/message/send_message", message_handler.SendMessageHandler),
         ]
         settings = dict(
             debug=True,

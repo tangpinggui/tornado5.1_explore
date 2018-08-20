@@ -5,12 +5,14 @@ from pycket.session import SessionMixin
 from libs.main import main_libs
 from models.db.db_config import dbSession
 from models.auth.model import Posts, User
+from handlers.ws.ws_handler import rds
 
 
 class AuthBaseHandler(tornado.web.RequestHandler, SessionMixin):
     ''' 拥有数据库session的base类 '''
     def initialize(self):
         self.db = dbSession
+        self.conn = rds
 
     def get_current_user(self):
         return self.session.get('cookie_name')  # 也可以查询user对象返回，感觉会更好
