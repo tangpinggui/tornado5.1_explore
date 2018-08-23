@@ -4,9 +4,9 @@
 		<!--声明当前网页的编码集：中文编码（GBK/GB2312），国际编码（utf-8）--->
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<!--声明当前页面的三要素-->
-		<title>消息模块</title>
+		<title>万人迷聊天室</title>
 		<meta name="Keywords" content="关键词,关键词,关键词">
-		<meta name="description" content=""><!--描述信息（百度快照）八十个字以内-->
+		<meta name="description" content=""><!--描述信息八十个字以内-->
 		<!--css/js-->
 		<style type="text/css">
 			*{margin:0;padding:0;}
@@ -49,7 +49,8 @@
 <body>
 	<!--用户列表-->
 	<div id="users">
-		<p style="background-color: #b9baaf">当前用户：{{current_user}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="status" href="javascript:void();"></a></p>
+		<p style="background-color: #b9baaf">当前用户：{{current_user}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="status" href="javascript:void(0);"></a></p>
+		<div style="background: #0d6aad" id="many-p"></div>
 	</div>
 	<!-- 留言列表 -->
 		<p style="background-color: #c0b86b;" class="system_all"></p>
@@ -190,7 +191,6 @@
 		<!-- 留言编辑框结束 -->
 		<!-- 留言列表 -->
 		<div class="t_all">
-			<div style="margin-left: 500px" class="tishi" username="{{ current_user }}"></div>
 			{% for ca in cache  %}
 				<div class='t_list animated bounceIn'>
 					<div class='t_header'>
@@ -218,7 +218,8 @@
     </script>
 
 	<script type="text/javascript">
-        // $(document).ready(function(){
+
+		// $(document).ready(function(){
         //         //与服务器建立websocket链接请求
         //         var url="ws://" + location.host + "/ws";
         //         var ws= new WebSocket(url);//在浏览器打开一个socket  服务器打开一个socket
@@ -316,14 +317,14 @@
 			// 		$(".system_all").html(messages);
 			// 	}
         // })
-		
-		// 心跳检测
-		var wsUrl = "ws://"+location.host+"/ws";
-    	var ws;
-    	var tt;
-		$(function () {
-			createWebSocket()
+        // 心跳检测
+
+        $(function () {
+            createWebSocket()
         });
+        var wsUrl = "ws://"+location.host+"/ws";
+        var ws;
+        var tt;
 		// 1. 第一步页面初始化，先调用createWebSocket函数，目的是创建一个websocket的方法：new WebSocket(wsUrl);因此封装成函数内如下代码：
         function createWebSocket() {
             try {
@@ -335,13 +336,6 @@
         }
 		// 2. 第二步调用init方法，该方法内把一些监听事件封装如下：
         function init() {
-            ws.onclose = function () {
-                $('#status').text('已经断开链接');
-                reconnect(wsUrl);
-            };
-            ws.onerror = function () {
-                reconnect(wsUrl);
-            };
             ws.onopen = function () {
 				$('#status').text('已经建立链接');
                 //心跳检测重置
@@ -349,14 +343,31 @@
             };
             ws.onmessage = function (event) {
                 //拿到任何消息都说明当前连接是正常的
-				message = JSON.parse(event.data);
-                  if(message != '2'){
-                      append(message);
-				  }else {
-                      console.log(message)
-				  }
+                message = JSON.parse(event.data);
+                if (message['come']) {
+                    $(".t_all").prepend(
+                        '<div style="margin-left: 500px" class="come">'+message['come']+'</div>'
+                    );
+					$('#many-p').html(
+					    '聊天室人数:'+'<span id="current-p">'+parseInt(message['many'])+'</span>'
+					)
+                } else if (message == '2') {
+                } else if(message['reduce']){
+                    var currentP = $('#current-p');
+                	var now_people = currentP.val()-1;
+                	currentP.val(now_people)
+                }else {
+					append(message);
+				}
                 heartCheck.start();
-            }
+            };
+			ws.onclose = function () {
+                $('#status').text('已经断开链接');
+                reconnect(wsUrl);
+            };
+            ws.onerror = function () {
+                reconnect(wsUrl);
+            };
         }
 		// 3.如上第二步，当网络断开的时候，会先调用onerror，onclose事件可以监听到，会调用reconnect方法进行重连操作。
 		// 正常的情况下，是先调用onopen方法的，当接收到数据时，会被onmessage事

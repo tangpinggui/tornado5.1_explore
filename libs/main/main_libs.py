@@ -14,7 +14,7 @@ class MainFileLib(object):
 
     def __init__(self, static_path, file_name):
         self.static_path = static_path
-        self.upload_name = file_name
+        self.upload_name = file_name  # to get ext
         self.file_name = self.uuid_file_name
 
     @property
@@ -60,13 +60,14 @@ class MainFileLib(object):
 
     def upload_file_and_thumbs_file(self, username):
         ''' upload file and it's thumbs file url to db '''
-        posts = Posts(
+        post = Posts(
             uploads_url=self.get_upload_file_url,
             thumbs_url=self.get_upload_thumbs_url,
             user_id=User.by_name(username).id,
         )
-        dbSession.add(posts)
+        dbSession.add(post)
         dbSession.commit()
+        return post
 
 
 def get_all_images(path):

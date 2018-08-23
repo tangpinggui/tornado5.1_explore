@@ -6,6 +6,7 @@ from tornado.options import define, options
 from handlers.main import main_handler
 from handlers.auth import auth_handler
 from handlers.message import message_handler
+from handlers.grab_pictures import grab_handler
 
 
 define('port', default=8000, type=int, help='Listening port')
@@ -28,7 +29,9 @@ class AppConfig(tornado.web.Application):
             # -------
             (r"/message/message", message_handler.MessageHandler),
             (r"/message/message_websocket", message_handler.WebSocketHandler),
-            (r"/message/send_message", message_handler.SendMessageHandler),
+            # ----
+            (r"/grab", grab_handler.GetUrlHandler),
+            (r"/grab_picture", grab_handler.GrabPicturesHandler),
         ]
         settings = dict(
             debug=True,

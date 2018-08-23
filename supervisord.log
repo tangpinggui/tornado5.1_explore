@@ -158,3 +158,327 @@
 2018-08-21 17:29:24,361 INFO spawned: 'tornado-9000' with pid 70403
 2018-08-21 17:29:25,365 INFO success: tornado-9001 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
 2018-08-21 17:29:25,365 INFO success: tornado-9000 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-21 17:56:14,353 INFO waiting for tornado-9001 to stop
+2018-08-21 17:56:14,353 INFO waiting for tornado-9000 to stop
+2018-08-21 17:56:14,360 INFO stopped: tornado-9000 (terminated by SIGTERM)
+2018-08-21 17:56:14,360 INFO stopped: tornado-9001 (terminated by SIGTERM)
+2018-08-21 17:56:59,721 INFO spawned: 'tornado-9001' with pid 70541
+2018-08-21 17:56:59,724 INFO spawned: 'tornado-9000' with pid 70542
+2018-08-21 17:57:00,727 INFO success: tornado-9001 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-21 17:57:00,727 INFO success: tornado-9000 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-21 18:23:52,128 INFO waiting for tornado-9001 to stop
+2018-08-21 18:23:52,128 INFO waiting for tornado-9000 to stop
+2018-08-21 18:23:52,133 INFO stopped: tornado-9000 (terminated by SIGTERM)
+2018-08-21 18:23:52,134 INFO stopped: tornado-9001 (terminated by SIGTERM)
+2018-08-21 18:24:25,814 INFO spawned: 'tornado-9000' with pid 70646
+2018-08-21 18:24:26,817 INFO success: tornado-9000 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-21 18:26:22,199 INFO waiting for tornado-9000 to stop
+2018-08-21 18:26:22,203 INFO stopped: tornado-9000 (terminated by SIGTERM)
+2018-08-21 18:26:23,206 INFO spawned: 'tornado-9000' with pid 70647
+2018-08-21 18:26:24,209 INFO success: tornado-9000 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-21 18:26:26,621 INFO waiting for tornado-9000 to stop
+2018-08-21 18:26:26,624 INFO stopped: tornado-9000 (terminated by SIGTERM)
+2018-08-22 09:26:04,968 INFO spawned: 'tornado-9001' with pid 71108
+2018-08-22 09:26:04,972 INFO spawned: 'tornado-9000' with pid 71109
+2018-08-22 09:26:05,974 INFO success: tornado-9001 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 09:26:05,974 INFO success: tornado-9000 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 11:42:20,702 INFO waiting for tornado-9001 to stop
+2018-08-22 11:42:20,704 INFO waiting for tornado-9000 to stop
+2018-08-22 11:42:20,711 INFO stopped: tornado-9000 (terminated by SIGTERM)
+2018-08-22 11:42:20,711 INFO stopped: tornado-9001 (terminated by SIGTERM)
+2018-08-22 11:42:22,716 INFO spawned: 'tornado-9001' with pid 71476
+2018-08-22 11:42:22,719 INFO spawned: 'tornado-9000' with pid 71477
+2018-08-22 11:42:23,720 INFO success: tornado-9001 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 11:42:23,721 INFO success: tornado-9000 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 11:43:19,604 INFO waiting for tornado-9001 to stop
+2018-08-22 11:43:19,604 INFO waiting for tornado-9000 to stop
+2018-08-22 11:43:19,608 INFO stopped: tornado-9000 (terminated by SIGTERM)
+2018-08-22 11:43:19,609 INFO stopped: tornado-9001 (terminated by SIGTERM)
+2018-08-22 11:43:21,612 INFO spawned: 'tornado-9001' with pid 71486
+2018-08-22 11:43:21,614 INFO spawned: 'tornado-9000' with pid 71487
+2018-08-22 11:43:22,616 INFO success: tornado-9001 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 11:43:22,617 INFO success: tornado-9000 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 11:45:16,851 INFO waiting for tornado-9001 to stop
+2018-08-22 11:45:16,851 INFO waiting for tornado-9000 to stop
+2018-08-22 11:45:16,855 INFO stopped: tornado-9001 (terminated by SIGTERM)
+2018-08-22 11:45:16,855 INFO stopped: tornado-9000 (terminated by SIGTERM)
+2018-08-22 11:45:18,858 INFO spawned: 'tornado-9001' with pid 71494
+2018-08-22 11:45:18,861 INFO spawned: 'tornado-9000' with pid 71495
+2018-08-22 11:45:19,863 INFO success: tornado-9001 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 11:45:19,863 INFO success: tornado-9000 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 11:46:12,904 INFO waiting for tornado-9001 to stop
+2018-08-22 11:46:12,905 INFO waiting for tornado-9000 to stop
+2018-08-22 11:46:12,909 INFO stopped: tornado-9000 (terminated by SIGTERM)
+2018-08-22 11:46:12,909 INFO stopped: tornado-9001 (terminated by SIGTERM)
+2018-08-22 11:46:14,913 INFO spawned: 'tornado-9001' with pid 71500
+2018-08-22 11:46:14,917 INFO spawned: 'tornado-9000' with pid 71501
+2018-08-22 11:46:15,919 INFO success: tornado-9001 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 11:46:15,920 INFO success: tornado-9000 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 11:47:17,386 INFO waiting for tornado-9001 to stop
+2018-08-22 11:47:17,386 INFO waiting for tornado-9000 to stop
+2018-08-22 11:47:17,391 INFO stopped: tornado-9000 (terminated by SIGTERM)
+2018-08-22 11:47:17,391 INFO stopped: tornado-9001 (terminated by SIGTERM)
+2018-08-22 11:47:19,395 INFO spawned: 'tornado-9001' with pid 71508
+2018-08-22 11:47:19,398 INFO spawned: 'tornado-9000' with pid 71509
+2018-08-22 11:47:21,311 INFO success: tornado-9001 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 11:47:21,311 INFO success: tornado-9000 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 13:35:48,762 INFO waiting for tornado-9001 to stop
+2018-08-22 13:35:48,762 INFO waiting for tornado-9000 to stop
+2018-08-22 13:35:48,767 INFO stopped: tornado-9000 (terminated by SIGTERM)
+2018-08-22 13:35:48,767 INFO stopped: tornado-9001 (terminated by SIGTERM)
+2018-08-22 13:35:52,286 INFO spawned: 'tornado-9001' with pid 71711
+2018-08-22 13:35:52,288 INFO spawned: 'tornado-9000' with pid 71712
+2018-08-22 13:35:53,291 INFO success: tornado-9001 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 13:35:53,291 INFO success: tornado-9000 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 13:47:13,490 INFO waiting for tornado-9001 to stop
+2018-08-22 13:47:13,491 INFO waiting for tornado-9000 to stop
+2018-08-22 13:47:13,499 INFO stopped: tornado-9001 (terminated by SIGTERM)
+2018-08-22 13:47:13,500 INFO stopped: tornado-9000 (terminated by SIGTERM)
+2018-08-22 13:47:15,505 INFO spawned: 'tornado-9001' with pid 71745
+2018-08-22 13:47:15,507 INFO spawned: 'tornado-9000' with pid 71746
+2018-08-22 13:47:16,511 INFO success: tornado-9001 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 13:47:16,511 INFO success: tornado-9000 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 13:49:57,559 INFO exited: tornado-9001 (exit status 1; not expected)
+2018-08-22 13:49:57,567 INFO spawned: 'tornado-9001' with pid 71760
+2018-08-22 13:49:57,568 INFO exited: tornado-9000 (exit status 1; not expected)
+2018-08-22 13:49:57,976 INFO spawned: 'tornado-9000' with pid 71761
+2018-08-22 13:49:58,029 INFO exited: tornado-9001 (exit status 1; not expected)
+2018-08-22 13:49:58,420 INFO exited: tornado-9000 (exit status 1; not expected)
+2018-08-22 13:49:59,424 INFO spawned: 'tornado-9001' with pid 71762
+2018-08-22 13:49:59,427 INFO spawned: 'tornado-9000' with pid 71763
+2018-08-22 13:49:59,969 INFO exited: tornado-9000 (exit status 1; not expected)
+2018-08-22 13:49:59,972 INFO exited: tornado-9001 (exit status 1; not expected)
+2018-08-22 13:50:02,552 INFO spawned: 'tornado-9001' with pid 71764
+2018-08-22 13:50:02,554 INFO spawned: 'tornado-9000' with pid 71765
+2018-08-22 13:50:03,037 INFO exited: tornado-9001 (exit status 1; not expected)
+2018-08-22 13:50:03,043 INFO exited: tornado-9000 (exit status 1; not expected)
+2018-08-22 13:50:06,549 INFO spawned: 'tornado-9001' with pid 71766
+2018-08-22 13:50:06,551 INFO spawned: 'tornado-9000' with pid 71767
+2018-08-22 13:50:07,029 INFO exited: tornado-9000 (exit status 1; not expected)
+2018-08-22 13:50:07,031 INFO gave up: tornado-9000 entered FATAL state, too many start retries too quickly
+2018-08-22 13:50:07,031 INFO exited: tornado-9001 (exit status 1; not expected)
+2018-08-22 13:50:08,032 INFO gave up: tornado-9001 entered FATAL state, too many start retries too quickly
+2018-08-22 13:50:10,454 INFO spawned: 'tornado-9001' with pid 71768
+2018-08-22 13:50:10,457 INFO spawned: 'tornado-9000' with pid 71769
+2018-08-22 13:50:10,910 INFO exited: tornado-9001 (exit status 1; not expected)
+2018-08-22 13:50:10,911 INFO exited: tornado-9000 (exit status 1; not expected)
+2018-08-22 13:50:11,914 INFO spawned: 'tornado-9001' with pid 71770
+2018-08-22 13:50:11,917 INFO spawned: 'tornado-9000' with pid 71771
+2018-08-22 13:50:12,364 INFO exited: tornado-9000 (exit status 1; not expected)
+2018-08-22 13:50:12,365 INFO exited: tornado-9001 (exit status 1; not expected)
+2018-08-22 13:50:14,377 INFO spawned: 'tornado-9001' with pid 71772
+2018-08-22 13:50:14,379 INFO spawned: 'tornado-9000' with pid 71773
+2018-08-22 13:50:15,246 INFO exited: tornado-9000 (exit status 1; not expected)
+2018-08-22 13:50:15,252 INFO exited: tornado-9001 (exit status 1; not expected)
+2018-08-22 13:50:18,258 INFO spawned: 'tornado-9001' with pid 71777
+2018-08-22 13:50:18,261 INFO spawned: 'tornado-9000' with pid 71778
+2018-08-22 13:50:18,792 INFO exited: tornado-9000 (exit status 1; not expected)
+2018-08-22 13:50:18,800 INFO gave up: tornado-9000 entered FATAL state, too many start retries too quickly
+2018-08-22 13:50:18,800 INFO exited: tornado-9001 (exit status 1; not expected)
+2018-08-22 13:50:19,802 INFO gave up: tornado-9001 entered FATAL state, too many start retries too quickly
+2018-08-22 13:50:57,367 INFO spawned: 'tornado-9001' with pid 71787
+2018-08-22 13:50:57,371 INFO spawned: 'tornado-9000' with pid 71788
+2018-08-22 13:50:57,848 INFO exited: tornado-9000 (exit status 1; not expected)
+2018-08-22 13:50:57,851 INFO exited: tornado-9001 (exit status 1; not expected)
+2018-08-22 13:50:58,855 INFO spawned: 'tornado-9001' with pid 71789
+2018-08-22 13:50:58,858 INFO spawned: 'tornado-9000' with pid 71790
+2018-08-22 13:50:59,350 INFO exited: tornado-9001 (exit status 1; not expected)
+2018-08-22 13:50:59,357 INFO exited: tornado-9000 (exit status 1; not expected)
+2018-08-22 13:51:01,370 INFO spawned: 'tornado-9001' with pid 71791
+2018-08-22 13:51:01,373 INFO spawned: 'tornado-9000' with pid 71792
+2018-08-22 13:51:01,878 INFO exited: tornado-9000 (exit status 1; not expected)
+2018-08-22 13:51:01,881 INFO exited: tornado-9001 (exit status 1; not expected)
+2018-08-22 13:51:04,885 INFO spawned: 'tornado-9001' with pid 71793
+2018-08-22 13:51:04,893 INFO spawned: 'tornado-9000' with pid 71794
+2018-08-22 13:51:05,325 INFO exited: tornado-9000 (exit status 1; not expected)
+2018-08-22 13:51:05,326 INFO gave up: tornado-9000 entered FATAL state, too many start retries too quickly
+2018-08-22 13:51:05,327 INFO exited: tornado-9001 (exit status 1; not expected)
+2018-08-22 13:51:06,328 INFO gave up: tornado-9001 entered FATAL state, too many start retries too quickly
+2018-08-22 14:00:47,833 INFO spawned: 'tornado-9001' with pid 71857
+2018-08-22 14:00:47,836 INFO spawned: 'tornado-9000' with pid 71858
+2018-08-22 14:00:48,296 INFO exited: tornado-9000 (exit status 1; not expected)
+2018-08-22 14:00:48,300 INFO exited: tornado-9001 (exit status 1; not expected)
+2018-08-22 14:00:49,303 INFO spawned: 'tornado-9001' with pid 71859
+2018-08-22 14:00:49,306 INFO spawned: 'tornado-9000' with pid 71860
+2018-08-22 14:00:49,803 INFO exited: tornado-9001 (exit status 1; not expected)
+2018-08-22 14:00:49,822 INFO exited: tornado-9000 (exit status 1; not expected)
+2018-08-22 14:00:51,835 INFO spawned: 'tornado-9001' with pid 71861
+2018-08-22 14:00:51,837 INFO spawned: 'tornado-9000' with pid 71862
+2018-08-22 14:00:52,306 INFO exited: tornado-9001 (exit status 1; not expected)
+2018-08-22 14:00:52,306 INFO exited: tornado-9000 (exit status 1; not expected)
+2018-08-22 14:00:55,312 INFO spawned: 'tornado-9001' with pid 71863
+2018-08-22 14:00:55,314 INFO spawned: 'tornado-9000' with pid 71864
+2018-08-22 14:00:55,774 INFO exited: tornado-9001 (exit status 1; not expected)
+2018-08-22 14:00:55,780 INFO gave up: tornado-9001 entered FATAL state, too many start retries too quickly
+2018-08-22 14:00:55,780 INFO exited: tornado-9000 (exit status 1; not expected)
+2018-08-22 14:00:56,782 INFO gave up: tornado-9000 entered FATAL state, too many start retries too quickly
+2018-08-22 14:02:45,169 INFO spawned: 'tornado-9001' with pid 71875
+2018-08-22 14:02:45,177 INFO spawned: 'tornado-9000' with pid 71876
+2018-08-22 14:02:45,625 INFO exited: tornado-9000 (exit status 1; not expected)
+2018-08-22 14:02:45,626 INFO exited: tornado-9001 (exit status 1; not expected)
+2018-08-22 14:02:46,630 INFO spawned: 'tornado-9001' with pid 71877
+2018-08-22 14:02:46,633 INFO spawned: 'tornado-9000' with pid 71878
+2018-08-22 14:02:47,137 INFO exited: tornado-9001 (exit status 1; not expected)
+2018-08-22 14:02:47,147 INFO exited: tornado-9000 (exit status 1; not expected)
+2018-08-22 14:02:49,161 INFO spawned: 'tornado-9001' with pid 71880
+2018-08-22 14:02:49,163 INFO spawned: 'tornado-9000' with pid 71881
+2018-08-22 14:02:49,640 INFO exited: tornado-9000 (exit status 1; not expected)
+2018-08-22 14:02:49,653 INFO exited: tornado-9001 (exit status 1; not expected)
+2018-08-22 14:02:52,660 INFO spawned: 'tornado-9001' with pid 71882
+2018-08-22 14:02:52,662 INFO spawned: 'tornado-9000' with pid 71883
+2018-08-22 14:02:53,095 INFO exited: tornado-9000 (exit status 1; not expected)
+2018-08-22 14:02:53,095 INFO exited: tornado-9001 (exit status 1; not expected)
+2018-08-22 14:02:54,098 INFO gave up: tornado-9001 entered FATAL state, too many start retries too quickly
+2018-08-22 14:02:54,098 INFO gave up: tornado-9000 entered FATAL state, too many start retries too quickly
+2018-08-22 14:06:47,158 INFO spawned: 'tornado-9001' with pid 71919
+2018-08-22 14:06:47,160 INFO spawned: 'tornado-9000' with pid 71920
+2018-08-22 14:06:48,163 INFO success: tornado-9001 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 14:06:48,163 INFO success: tornado-9000 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 14:12:41,452 INFO waiting for tornado-9001 to stop
+2018-08-22 14:12:41,452 INFO waiting for tornado-9000 to stop
+2018-08-22 14:12:41,457 INFO stopped: tornado-9000 (terminated by SIGTERM)
+2018-08-22 14:12:41,458 INFO stopped: tornado-9001 (terminated by SIGTERM)
+2018-08-22 14:12:43,461 INFO spawned: 'tornado-9001' with pid 71948
+2018-08-22 14:12:43,463 INFO spawned: 'tornado-9000' with pid 71949
+2018-08-22 14:12:44,466 INFO success: tornado-9001 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 14:12:44,466 INFO success: tornado-9000 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 14:18:39,199 INFO waiting for tornado-9001 to stop
+2018-08-22 14:18:39,199 INFO waiting for tornado-9000 to stop
+2018-08-22 14:18:39,205 INFO stopped: tornado-9001 (terminated by SIGTERM)
+2018-08-22 14:18:39,206 INFO stopped: tornado-9000 (terminated by SIGTERM)
+2018-08-22 14:18:41,211 INFO spawned: 'tornado-9001' with pid 71976
+2018-08-22 14:18:41,214 INFO spawned: 'tornado-9000' with pid 71977
+2018-08-22 14:18:42,216 INFO success: tornado-9001 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 14:18:42,216 INFO success: tornado-9000 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 14:21:11,144 INFO waiting for tornado-9001 to stop
+2018-08-22 14:21:11,144 INFO waiting for tornado-9000 to stop
+2018-08-22 14:21:11,148 INFO stopped: tornado-9000 (terminated by SIGTERM)
+2018-08-22 14:21:11,148 INFO stopped: tornado-9001 (terminated by SIGTERM)
+2018-08-22 14:21:13,152 INFO spawned: 'tornado-9001' with pid 71994
+2018-08-22 14:21:13,155 INFO spawned: 'tornado-9000' with pid 71995
+2018-08-22 14:21:14,158 INFO success: tornado-9001 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 14:21:14,158 INFO success: tornado-9000 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 14:23:47,941 INFO waiting for tornado-9001 to stop
+2018-08-22 14:23:47,941 INFO waiting for tornado-9000 to stop
+2018-08-22 14:23:47,945 INFO stopped: tornado-9000 (terminated by SIGTERM)
+2018-08-22 14:23:47,945 INFO stopped: tornado-9001 (terminated by SIGTERM)
+2018-08-22 14:23:49,950 INFO spawned: 'tornado-9001' with pid 72015
+2018-08-22 14:23:49,952 INFO spawned: 'tornado-9000' with pid 72016
+2018-08-22 14:23:50,955 INFO success: tornado-9001 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 14:23:50,956 INFO success: tornado-9000 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 14:27:20,772 INFO waiting for tornado-9001 to stop
+2018-08-22 14:27:20,773 INFO waiting for tornado-9000 to stop
+2018-08-22 14:27:20,777 INFO stopped: tornado-9001 (terminated by SIGTERM)
+2018-08-22 14:27:20,777 INFO stopped: tornado-9000 (terminated by SIGTERM)
+2018-08-22 14:27:22,782 INFO spawned: 'tornado-9001' with pid 72044
+2018-08-22 14:27:22,785 INFO spawned: 'tornado-9000' with pid 72045
+2018-08-22 14:27:23,788 INFO success: tornado-9001 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 14:27:23,788 INFO success: tornado-9000 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 14:29:02,266 INFO waiting for tornado-9001 to stop
+2018-08-22 14:29:02,267 INFO waiting for tornado-9000 to stop
+2018-08-22 14:29:02,270 INFO stopped: tornado-9000 (terminated by SIGTERM)
+2018-08-22 14:29:02,271 INFO stopped: tornado-9001 (terminated by SIGTERM)
+2018-08-22 14:29:04,276 INFO spawned: 'tornado-9001' with pid 72055
+2018-08-22 14:29:04,278 INFO spawned: 'tornado-9000' with pid 72056
+2018-08-22 14:29:05,281 INFO success: tornado-9001 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 14:29:05,282 INFO success: tornado-9000 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 14:30:42,307 INFO waiting for tornado-9001 to stop
+2018-08-22 14:30:42,307 INFO waiting for tornado-9000 to stop
+2018-08-22 14:30:42,312 INFO stopped: tornado-9000 (terminated by SIGTERM)
+2018-08-22 14:30:42,312 INFO stopped: tornado-9001 (terminated by SIGTERM)
+2018-08-22 14:30:44,319 INFO spawned: 'tornado-9001' with pid 72068
+2018-08-22 14:30:44,323 INFO spawned: 'tornado-9000' with pid 72069
+2018-08-22 14:30:45,327 INFO success: tornado-9001 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 14:30:45,328 INFO success: tornado-9000 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 14:33:53,888 INFO waiting for tornado-9001 to stop
+2018-08-22 14:33:53,888 INFO waiting for tornado-9000 to stop
+2018-08-22 14:33:53,892 INFO stopped: tornado-9000 (terminated by SIGTERM)
+2018-08-22 14:33:53,892 INFO stopped: tornado-9001 (terminated by SIGTERM)
+2018-08-22 14:33:55,897 INFO spawned: 'tornado-9001' with pid 72085
+2018-08-22 14:33:55,900 INFO spawned: 'tornado-9000' with pid 72086
+2018-08-22 14:33:56,903 INFO success: tornado-9001 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 14:33:56,904 INFO success: tornado-9000 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 14:37:59,705 INFO waiting for tornado-9001 to stop
+2018-08-22 14:37:59,705 INFO waiting for tornado-9000 to stop
+2018-08-22 14:37:59,710 INFO stopped: tornado-9000 (terminated by SIGTERM)
+2018-08-22 14:37:59,710 INFO stopped: tornado-9001 (terminated by SIGTERM)
+2018-08-22 14:38:01,714 INFO spawned: 'tornado-9001' with pid 72099
+2018-08-22 14:38:01,716 INFO spawned: 'tornado-9000' with pid 72100
+2018-08-22 14:38:02,719 INFO success: tornado-9001 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 14:38:02,720 INFO success: tornado-9000 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 14:41:44,404 INFO waiting for tornado-9001 to stop
+2018-08-22 14:41:44,405 INFO waiting for tornado-9000 to stop
+2018-08-22 14:41:44,408 INFO stopped: tornado-9000 (terminated by SIGTERM)
+2018-08-22 14:41:44,408 INFO stopped: tornado-9001 (terminated by SIGTERM)
+2018-08-22 14:41:46,412 INFO spawned: 'tornado-9001' with pid 72117
+2018-08-22 14:41:46,415 INFO spawned: 'tornado-9000' with pid 72118
+2018-08-22 14:41:47,418 INFO success: tornado-9001 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 14:41:47,419 INFO success: tornado-9000 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 14:47:30,147 INFO exited: tornado-9000 (exit status 1; not expected)
+2018-08-22 14:47:30,165 INFO spawned: 'tornado-9000' with pid 72148
+2018-08-22 14:47:30,165 INFO exited: tornado-9001 (exit status 1; not expected)
+2018-08-22 14:47:30,562 INFO spawned: 'tornado-9001' with pid 72149
+2018-08-22 14:47:30,617 INFO exited: tornado-9000 (exit status 1; not expected)
+2018-08-22 14:47:31,013 INFO exited: tornado-9001 (exit status 1; not expected)
+2018-08-22 14:47:32,016 INFO spawned: 'tornado-9001' with pid 72150
+2018-08-22 14:47:32,018 INFO spawned: 'tornado-9000' with pid 72151
+2018-08-22 14:47:32,587 INFO exited: tornado-9001 (exit status 1; not expected)
+2018-08-22 14:47:32,593 INFO exited: tornado-9000 (exit status 1; not expected)
+2018-08-22 14:47:34,599 INFO spawned: 'tornado-9001' with pid 72152
+2018-08-22 14:47:34,601 INFO spawned: 'tornado-9000' with pid 72153
+2018-08-22 14:47:35,111 INFO exited: tornado-9000 (exit status 1; not expected)
+2018-08-22 14:47:35,116 INFO exited: tornado-9001 (exit status 1; not expected)
+2018-08-22 14:47:38,120 INFO spawned: 'tornado-9001' with pid 72154
+2018-08-22 14:47:38,123 INFO spawned: 'tornado-9000' with pid 72155
+2018-08-22 14:47:38,579 INFO exited: tornado-9001 (exit status 1; not expected)
+2018-08-22 14:47:38,582 INFO gave up: tornado-9001 entered FATAL state, too many start retries too quickly
+2018-08-22 14:47:38,582 INFO exited: tornado-9000 (exit status 1; not expected)
+2018-08-22 14:47:39,583 INFO gave up: tornado-9000 entered FATAL state, too many start retries too quickly
+2018-08-22 15:04:06,678 INFO spawned: 'tornado-9001' with pid 72222
+2018-08-22 15:04:06,681 INFO spawned: 'tornado-9000' with pid 72223
+2018-08-22 15:04:07,685 INFO success: tornado-9001 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 15:04:07,685 INFO success: tornado-9000 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 15:08:36,741 INFO waiting for tornado-9001 to stop
+2018-08-22 15:08:36,741 INFO waiting for tornado-9000 to stop
+2018-08-22 15:08:36,745 INFO stopped: tornado-9001 (terminated by SIGTERM)
+2018-08-22 15:08:36,746 INFO stopped: tornado-9000 (terminated by SIGTERM)
+2018-08-22 15:08:38,750 INFO spawned: 'tornado-9001' with pid 72227
+2018-08-22 15:08:38,753 INFO spawned: 'tornado-9000' with pid 72228
+2018-08-22 15:08:39,757 INFO success: tornado-9001 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 15:08:39,757 INFO success: tornado-9000 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 15:22:26,188 INFO exited: tornado-9000 (exit status 1; not expected)
+2018-08-22 15:22:26,229 INFO spawned: 'tornado-9000' with pid 72277
+2018-08-22 15:22:26,319 INFO exited: tornado-9001 (exit status 1; not expected)
+2018-08-22 15:22:26,717 INFO spawned: 'tornado-9001' with pid 72278
+2018-08-22 15:22:26,781 INFO exited: tornado-9000 (exit status 1; not expected)
+2018-08-22 15:22:27,176 INFO exited: tornado-9001 (exit status 1; not expected)
+2018-08-22 15:22:28,179 INFO spawned: 'tornado-9001' with pid 72279
+2018-08-22 15:22:28,181 INFO spawned: 'tornado-9000' with pid 72280
+2018-08-22 15:22:28,779 INFO exited: tornado-9000 (exit status 1; not expected)
+2018-08-22 15:22:28,780 INFO exited: tornado-9001 (exit status 1; not expected)
+2018-08-22 15:22:30,784 INFO spawned: 'tornado-9001' with pid 72281
+2018-08-22 15:22:30,786 INFO spawned: 'tornado-9000' with pid 72282
+2018-08-22 15:22:31,363 INFO exited: tornado-9001 (exit status 1; not expected)
+2018-08-22 15:22:31,376 INFO exited: tornado-9000 (exit status 1; not expected)
+2018-08-22 15:22:34,383 INFO spawned: 'tornado-9001' with pid 72284
+2018-08-22 15:22:34,386 INFO spawned: 'tornado-9000' with pid 72285
+2018-08-22 15:22:35,113 INFO exited: tornado-9001 (exit status 1; not expected)
+2018-08-22 15:22:35,122 INFO gave up: tornado-9001 entered FATAL state, too many start retries too quickly
+2018-08-22 15:22:35,122 INFO exited: tornado-9000 (exit status 1; not expected)
+2018-08-22 15:22:36,124 INFO gave up: tornado-9000 entered FATAL state, too many start retries too quickly
+2018-08-22 15:23:41,437 INFO spawned: 'tornado-9001' with pid 72290
+2018-08-22 15:23:41,439 INFO spawned: 'tornado-9000' with pid 72291
+2018-08-22 15:23:42,443 INFO success: tornado-9001 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 15:23:42,443 INFO success: tornado-9000 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 17:39:20,071 INFO waiting for tornado-9001 to stop
+2018-08-22 17:39:20,071 INFO waiting for tornado-9000 to stop
+2018-08-22 17:39:20,075 INFO stopped: tornado-9000 (terminated by SIGTERM)
+2018-08-22 17:39:20,076 INFO stopped: tornado-9001 (terminated by SIGTERM)
+2018-08-22 17:39:22,081 INFO spawned: 'tornado-9001' with pid 72525
+2018-08-22 17:39:22,083 INFO spawned: 'tornado-9000' with pid 72526
+2018-08-22 17:39:23,085 INFO success: tornado-9001 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 17:39:23,086 INFO success: tornado-9000 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2018-08-22 17:42:32,891 INFO waiting for tornado-9001 to stop
+2018-08-22 17:42:32,891 INFO waiting for tornado-9000 to stop
+2018-08-22 17:42:32,895 INFO stopped: tornado-9000 (terminated by SIGTERM)
+2018-08-22 17:42:32,895 INFO stopped: tornado-9001 (terminated by SIGTERM)

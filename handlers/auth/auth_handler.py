@@ -20,6 +20,7 @@ class RegisterHandler(AuthBaseHandler):
             return self.redirect('/login')
         return self.write(result['message'])
 
+
 class LoginHandler(AuthBaseHandler):
     def get(self):
         self.render('login.html')
