@@ -8,17 +8,15 @@
 {% end block %}
 
 {% block style %}
-    img{
-        width: 200px;
-        height: 200px;
-    }
 {% end block %}
 
 {% block body %}
 <span>this is explore page!!!</span>
-<div>
+<div class="row">
     {% for post in posts %}
-    <a href="/post/{{ post.id }}"><img src="{{ static_url(post.thumbs_url) }}" alt=""></a>
+    <div class="col-md-2">
+    <a href="/post/{{ post.id }}"><img class="img-thumbnail img-responsive" src="{{ static_url(post.thumbs_url) }}" alt=""></a>
+        </div>
     {% end %}
 </div>
 {% end block %}

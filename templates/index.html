@@ -100,9 +100,9 @@
 <div class="container">
     <div class="row">
         {% for post in posts %}
-        <div class="col-11 col-md-6 col-lg-2">
-            <a href="/explore"><img style="width: 100px; height: 100px" class="img-fluid"
-                                    src="{{ static_url(post.thumbs_url) }}" alt=""></a>
+        <div class="col-md-3">
+            <a href="/post/{{ post.id }}"><img style="width: 300px;height: 300px" content="img-rounded" class="img-fluid"
+                                    src="{{ static_url(post.uploads_url) }}" alt=""></a>
         </div>
         {% end %}
     </div>

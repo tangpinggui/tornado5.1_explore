@@ -1,6 +1,7 @@
 import tornado.ioloop
 import tornado.options
 import tornado.web
+from tornado.web import url
 from tornado.options import define, options
 
 from handlers.main import main_handler
@@ -25,13 +26,13 @@ class AppConfig(tornado.web.Application):
             (r'/register', auth_handler.RegisterHandler),
             (r'/profile', auth_handler.ProfileHandler),
             (r'/profile/like', auth_handler.ProfileLikeHandler),  # 点赞计数接口
-            (r'/ws', message_handler.WebSocketHandler),  # 聊天室
             # -------
-            (r"/message/message", message_handler.MessageHandler),
-            (r"/message/message_websocket", message_handler.WebSocketHandler),
+            (r"/message/message", message_handler.MessageHandler),  # 聊天室
+            (r"/message/ws", message_handler.WebSocketHandler),  # 聊天室websocket接口
             # ----
-            (r"/grab", grab_handler.GetUrlHandler),
-            (r"/grab_picture", grab_handler.GrabPicturesHandler),
+            url(r"/grab", grab_handler.GetUrlHandler, name='grab'),
+            (r"/grab_picture", grab_handler.GrabPicturesHandler),  # 抓去图片接口
+            (r"/timeout", grab_handler.TimeOutHandler),  # 抓去图片接口
         ]
         settings = dict(
             debug=True,

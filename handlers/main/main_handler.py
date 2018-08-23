@@ -42,8 +42,10 @@ class ALoneHandler(AuthBaseHandler):
     @tornado.web.authenticated
     def get(self, id):
         post = Posts.by_id(id)
-        self.render('alone.html', post=post)
-
+        if post:
+            self.render('alone.html', post=post)
+        else:
+            self.write('no this file')
 
 class UploadHandler(AuthBaseHandler):
     """ 接收图片并储存,再储存一张缩略图 """

@@ -322,7 +322,7 @@
         $(function () {
             createWebSocket()
         });
-        var wsUrl = "ws://"+location.host+"/ws";
+        var wsUrl = "ws://"+location.host+"/message/ws";
         var ws;
         var tt;
 		// 1. 第一步页面初始化，先调用createWebSocket函数，目的是创建一个websocket的方法：new WebSocket(wsUrl);因此封装成函数内如下代码：
@@ -344,6 +344,7 @@
             ws.onmessage = function (event) {
                 //拿到任何消息都说明当前连接是正常的
                 message = JSON.parse(event.data);
+                console.log(message)
                 if (message['come']) {
                     $(".t_all").prepend(
                         '<div style="margin-left: 500px" class="come">'+message['come']+'</div>'
@@ -351,7 +352,7 @@
 					$('#many-p').html(
 					    '聊天室人数:'+'<span id="current-p">'+parseInt(message['many'])+'</span>'
 					)
-                } else if (message == '2') {
+                } else if (message['heart'] == 'jiamide2') {
                 } else if(message['reduce']){
                     var currentP = $('#current-p');
                 	var now_people = currentP.val()-1;
